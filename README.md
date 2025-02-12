@@ -79,7 +79,7 @@ php artisan test
 | **GET** | `/items/{id}` | `itemController@show` | `items.show` | Retrieve details of a specific items by ID. |
 | **PUT** | `/items/{id}` | `itemController@update` | `items.update` | Update details of a specific items. |
 | **DELETE** | `/items/{id}` | `itemController@destroy` | `items.destroy` | Delete a items by ID. |
-| **DELETE** | `/items` | `itemController@destroy` | `items.destroy` | Delete all items. |
+| **DELETE** | `/items` | `itemController@destroy` | `items.destroyAll` | Delete all items. |
 
 ## Autores
 
