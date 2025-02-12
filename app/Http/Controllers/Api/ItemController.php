@@ -26,30 +26,29 @@ class ItemController extends Controller
         return response()->json($item, 201);
     }
 
-    public function show(Item $id)
+    public function show(string $id)
     {
-        $items = Item::findOrFail($id);
-        return response()->json($id, 200);
+        $items = Item::find($id);
+        return response()->json($items, 200);
     }
 
-    public function update(Request $request, Item $id)
+    public function update(Request $request, string $id)
     {
-        $item = Item::findOrFail($id);
-        if (!$item) {
+        $items = Item::find($id);
+        if (!$items) {
             return response()->json(['message' => 'Item not found'], 404);
         }
-        $validatedData = $request->validate([
+        $validated = $request->validate([
             'name' => 'required',
             'quantity' => 'required',
             'price' => 'required',
         ]);
-        $item = Item::findOrFail($id);
-        $item->update($validatedData);
+        $items->update($validated);
 
-        return response()->json($item, 200);
+        return response()->json($items, 200);
     }
 
-    public function destroy(Item $id)
+    public function destroy(string $id)
     {
         $item = Item::findOrFail($id);
         if (!$item) {
