@@ -89,4 +89,4 @@ php artisan test
 
 ---
 
-© 2025 Toll Station Management System. Todos los derechos reservados.
+© 2025 Shopping List Test. Todos los derechos reservados.
